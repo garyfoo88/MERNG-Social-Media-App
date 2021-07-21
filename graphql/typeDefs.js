@@ -2,6 +2,7 @@ const gql = require("graphql-tag");
 
 module.exports = gql`
   type Post {
+    # exclamation mark means required
     id: ID!
     body: String!
     createdAt: String!
@@ -20,11 +21,15 @@ module.exports = gql`
     confirmPassword: String!
     email: String!
   }
+  # Query and mutation types
   type Query {
-    # exclamation mark means required
     getPosts: [Post]
+    getPost(postId: ID!): Post
   }
   type Mutation {
     register(registerInput: RegisterInput): User!
+    login(username: String!, password: String!): User!
+    createPost(body: String!): Post!
+    deletePost(postId: ID!): String
   }
 `;
