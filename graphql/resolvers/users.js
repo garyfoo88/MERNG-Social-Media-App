@@ -9,6 +9,7 @@ const { generateToken } = require("../../utils/generateToken");
 
 module.exports = {
   Mutation: {
+    //login(parent, body, context)
     async login(_, { username, password }) {
       const { errors, valid } = validateLoginInput(username, password);
 

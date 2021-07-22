@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const { AuthenticationError } = require("apollo-server");
 
 module.exports = (context) => {
-  //context containts {...headers}
+  //context should containt {...headers}
   const authHeader = context.req.headers.authorization;
   if (authHeader) {
     //Bearer...
@@ -17,5 +17,5 @@ module.exports = (context) => {
     }
     throw new Error("Authentication token error")
   }
-  throw new Error("Authentication header must be provided")
+  throw new Error("Authorization header must be provided")
 };
