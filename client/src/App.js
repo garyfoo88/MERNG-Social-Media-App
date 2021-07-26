@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
-import Home from "./pages/home";
-import Login from "./pages/login";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
 import Register from "./pages/Register";
 import MenuBar from "./components/MenuBar";
 
