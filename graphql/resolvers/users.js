@@ -51,13 +51,12 @@ module.exports = {
         password,
         confirmPassword
       );
-
+      
       if (!valid) {
         throw new UserInputError("Errors", { errors });
       }
-
       //Make sure user doesnt already exist
-      const user = User.findOne({ username });
+      const user = await User.findOne({ username });
       if (user) {
         throw new UserInputError("Username is taken", {
           errors: {

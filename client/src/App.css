@@ -9,6 +9,11 @@
   margin-top: 10px;
 }
 
+.form-container {
+  width: 400px;
+  margin: auto;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
