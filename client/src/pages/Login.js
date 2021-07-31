@@ -16,6 +16,7 @@ function Login() {
     password: ''
   });
 
+  //loginUser function triggers when loginusercallback is invoked
   const [loginUser, { loading }] = useMutation(LOGIN_USER, {
     update(
       _,
@@ -25,7 +26,6 @@ function Login() {
       history.push('/');
     },
     onError(err) {
-      console.log(err.graphQLErrors[0].extensions)
       setErrors(err.graphQLErrors[0].extensions.errors);
     },
     variables: values
