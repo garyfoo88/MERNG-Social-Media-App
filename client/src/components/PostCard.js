@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Icon, Label, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import moment from "moment";
-
+import { AuthContext } from "../context/auth";
 function PostCard(props) {
   const {
     body,
