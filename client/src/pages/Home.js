@@ -7,11 +7,10 @@ import PostForm from "../components/PostForm";
 import { FETCH_POSTS_QUERY } from "../utils/graphql";
 function Home() {
   const { user } = useContext(AuthContext);
-  const { loading, data } = useQuery(FETCH_POSTS_QUERY);
+  const { loading, data, error } = useQuery(FETCH_POSTS_QUERY);
 
-  if (data) {
-    console.log(data.getPosts);
-  }
+  if (error) return null;
+
   return (
     <Grid columns={3}>
       <Grid.Row className="page-title">

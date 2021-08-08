@@ -10,7 +10,7 @@ function PostForm() {
     body: "",
   });
 
-  const [createPosts, { error, loading }] = useMutation(CREATE_POST_MUTATION, {
+  const [createPosts, { error }] = useMutation(CREATE_POST_MUTATION, {
     variables: values,
     update(proxy, result) {
       const data = proxy.readQuery({
